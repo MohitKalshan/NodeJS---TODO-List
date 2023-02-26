@@ -1,33 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <style>
+        body {
+            text-align: center;
+        }
+    </style>
     <title>
-        <%= locals.title %>        
+        <%= locals.title %>
     </title>
 </head>
+
 <body>
     <div class="upper">
         <div class="heading">
-            <h1>TODO List</h1>
+            <h1>
+                <%= title %>
+            </h1>
+
         </div>
         <div id="form-container">
             <form action="/add-task" method="post">
-                <input type="text" name="task" placeholder="Add task" required>
-                <!-- <select name="category" id="drop-down">
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                </select> -->
-
+                <!-- <h6>TITLE</h6>
+                <label for="title">Title</label>
+                <input type="text" name="title" placeholder="What's the title ?" required> -->
+                <h6>DESCRIPTION</h6>
+                <!-- <label for="desc">Description</label> -->
+                <textarea name="desc" cols="50" rows="5" placeholder="Write description here" required></textarea>
+                <div class="category">
+                    <select name="category" id="drop-down">
+                        <option value="Personal">Personal</option>
+                        <option value="Professional">Professional</option>
+                        <option value="Academics">Academics</option>
+                        <option value="Social">Social</option>
+                        <option value="Other">Other</option>
+                    </select>
+                    <input type="date" name="" id="">
+                </div>
+                <button type="submit">Add Task</button>
+            </form>
+            <form action="/delete-task" method="get">
+                <button type="submit">Delete Tasks</button>
 
             </form>
         </div>
     </div>
+    <div class="showTaskList">
+        <% if(todo_list.length!=0){ %>
+            <% for(let i of todo_list) { %>
+                <div>
+                    <input type="checkbox" name="">
+                </div>
+                <div>
+                    <h5><%= i.title %></h5>
+                    <p><%= i.desc %></p>
+                    <p><%= i.date %></p>
+                </div>
+            <% } %>
+          <% } %>
+    </div>
 </body>
+
 </html>

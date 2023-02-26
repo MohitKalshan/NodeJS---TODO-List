@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 
 const taskSchema = new mongoose.Schema({
+    // For Description
     task : {
         type : String,
         require:  true
@@ -16,6 +17,6 @@ const taskSchema = new mongoose.Schema({
 });
 
 // model() is for Collection
-const Tasks = mongoose.model('Task', taskSchema);
+const TaskList = mongoose.model('TaskList', taskSchema);
 
-module.exports = Tasks;
+module.exports = TaskList;
