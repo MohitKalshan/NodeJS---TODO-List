@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>
+        <%= locals.title %>        
+    </title>
+</head>
+<body>
+    <div class="upper">
+        <div class="heading">
+            <h1>TODO List</h1>
+        </div>
+        <div id="form-container">
+            <form action="/add-task" method="post">
+                <input type="text" name="task" placeholder="Add task" required>
+                <!-- <select name="category" id="drop-down">
+                    <option value=""></option>
+                    <option value=""></option>
+                    <option value=""></option>
+                    <option value=""></option>
+                </select> -->
+
+
+            </form>
+        </div>
+    </div>
+</body>
+</html>
