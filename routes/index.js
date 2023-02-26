@@ -15,6 +15,6 @@ router.post("/add-task", homeController.add);
 
 
 // Deleting data from the database
-router.post("/delete-task", homeController.delete);
+router.get("/delete-task", homeController.delete);
 
 module.exports = router;

@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const taskSchema = new mongoose.Schema({
     // For Description
-    task : {
+    desc : {
         type : String,
         require:  true
     },

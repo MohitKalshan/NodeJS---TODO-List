@@ -22,7 +22,6 @@
             <h1>
                 <%= title %>
             </h1>
-
         </div>
         <div id="form-container">
             <form action="/add-task" method="post">
@@ -44,26 +43,35 @@
                 </div>
                 <button type="submit">Add Task</button>
             </form>
-            <form action="/delete-task" method="get">
-                <button type="submit">Delete Tasks</button>
-
-            </form>
         </div>
-    </div>
-    <div class="showTaskList">
-        <% if(todo_list.length!=0){ %>
-            <% for(let i of todo_list) { %>
-                <div>
-                    <input type="checkbox" name="">
-                </div>
-                <div>
-                    <h5><%= i.title %></h5>
-                    <p><%= i.desc %></p>
-                    <p><%= i.date %></p>
-                </div>
-            <% } %>
-          <% } %>
-    </div>
+
+        <!-- form for deleting the task -->
+        <form action="/delete-task" method="get">
+            <button type="submit">Delete Tasks</button>
+            <div class="showTaskList">
+                <% if(todo_list.length!=0){ %>
+                    <% for(let i of todo_list) { %>
+                        <div>
+                            <input type="checkbox" name="">
+                        </div>
+                        <div>
+                            <h5>
+                                <%= i.title %>
+                            </h5>
+                            <p>
+                                <%= i.desc %>
+                            </p>
+                            <p>
+                                <%= i.date %>
+                            </p>
+                        </div>
+                        <% } %>
+                            <% } %>
+                                <% if( todo_list.length==0 ) {%>
+                                    <h1 style="text-align: center;">No task Added Yet!</h1>
+                                    <% } %>
+            </div>
+        </form>
 </body>
 
 </html>
