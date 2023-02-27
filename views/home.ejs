@@ -39,7 +39,7 @@
                         <option value="Social">Social</option>
                         <option value="Other">Other</option>
                     </select>
-                    <input type="date" name="" id="">
+                    <input type="date" name="date" id="">
                 </div>
                 <button type="submit">Add Task</button>
             </form>
@@ -52,17 +52,17 @@
                 <% if(todo_list.length!=0){ %>
                     <% for(let i of todo_list) { %>
                         <div>
-                            <input type="checkbox" name="<%= i._id %>">
+                            <input type="checkbox" name="id" value="<%= i._id %>">
                         </div>
                         <div>
                             <h5>
-                                <%= i.title %>
+                                <%= i.desc %>
                             </h5>
                             <p>
-                                <%= i.desc %>
+                                <%= i.date %>
                             </p>
                             <p>
-                                <%= i.date %>
+                                <%= i.category %>
                             </p>
                         </div>
                         <% } %>

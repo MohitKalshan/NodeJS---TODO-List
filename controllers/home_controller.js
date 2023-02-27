@@ -6,14 +6,14 @@ const TaskList = require("../models/task");
 module.exports.home = function (req, res) {
   // Find task to filter
   // Fetches tasks from database
-  TaskList.find({}, function (err, tasks) {
+  TaskList.find({}, function (err, task) {
     if (err) {
       console.log("Error in fetching Tasks");
       return;
     }
     return res.render('home',{
         title : "TO DO List!", 
-        todo_list : tasks
+        todo_list : task
      });
   });
 };
@@ -33,14 +33,22 @@ module.exports.add = function (req, res) {
 // Controller for deleting a task
 module.exports.delete = function (req, res) {
   // get id of selected task
-  var id = req.query;
-  console.log(id);
+  // console.log(req.body);
 
-  let selectedTask = Object.keys(id).length;
+  var id = req.query.id;
+  // console.log(id);
+  // let arr = req.query.id;
+  // console.log(arr);
+
+
+  // let selectedTask = Object.keys(id).length;
    // to check the number of tasks to be deleted
-   for (let i = 0; i < selectedTask; i++) {
+   for (let i = 0; i < id.length; i++) {
+    console.log(id[i]);
+
        //Deleting the task from the database by using their individual ids
-       Tasks.findByIdAndDelete(Object.keys(id)[i], 
+        // _id: id[i] for searching the task by id array
+       TaskList.findByIdAndDelete({_id:id[i]}, 
        function(err) {
            if (err) {
                console.log("Error in deleting the task from DB");

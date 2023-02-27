@@ -12,17 +12,15 @@ app.set("view engine", "ejs");
 app.set("views", "./views");
 
 //Middelware or Parser
-app.use(express.urlencoded({
-  extended: true
-}));
-
-
+app.use(
+  express.urlencoded()
+);
 
 // Static assets by use of middleware
 app.use(express.static("./Assets"));
 
 // Use express router
-app.use('/', require("./routes/index"));
+app.use("/", require("./routes/index"));
 
 // app listening on port
 app.listen(port, (err) => {
