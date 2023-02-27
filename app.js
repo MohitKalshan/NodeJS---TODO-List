@@ -3,7 +3,7 @@ const express = require("express");
 // Database connection
 const db = require("./config/mongoose");
 // Default port to listen on
-const port = 80;
+const port = 8000;
 
 const app = express();
 
