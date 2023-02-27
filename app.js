@@ -12,9 +12,7 @@ app.set("view engine", "ejs");
 app.set("views", "./views");
 
 //Middelware or Parser
-app.use(
-  express.urlencoded()
-);
+app.use(express.urlencoded({extended: true}));
 
 // Static assets by use of middleware
 app.use(express.static("./Assets"));
