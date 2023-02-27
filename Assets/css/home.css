@@ -11,6 +11,7 @@ body {
   flex-direction: column;
   margin: auto;
   width: 50%;
+  height: 50vh;
   background: #1623b4;
   border: 2px solid white;
 }
@@ -23,6 +24,9 @@ body {
   margin: auto;
   width: 50%;
   border: 2px solid white;
+}
+.showTaskList > div{
+    margin: 4px;
 }
 .btnSection{
     background: #4eb15a;
