@@ -4,7 +4,7 @@ const express = require("express");
 const db = require("./config/mongoose");
 
 
-// Default port to listen on
+// port to listen on
 const port = 8000;
 
 const app = express();
