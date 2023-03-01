@@ -92,9 +92,6 @@ input[type="date"] {
   flex-direction: column-reverse;
   align-items: center;
   justify-content: space-evenly;
-  /* position: relative; */
-  /* overflow: scroll; */
-  /* flex-wrap: wrap; */
   margin-top: 40px;
   width: 100%;
   box-shadow: 2px 2px 6px white;
@@ -128,10 +125,11 @@ input[type="checkbox"] {
   /* border: 2px solid rgb(2, 2, 2); */
   padding: 4px;
   position: absolute;
-  right: 10%;
+  right: 11%;
 }
 .todo-row {
-  border-radius: 0 4px 4px 0;
+  border-radius: 10px;
+  /* 0 4px 4px 0; */
 }
 .todo-row:nth-child(3n + 1) {
   background: rgb(255,87,19);
