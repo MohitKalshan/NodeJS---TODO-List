@@ -2,6 +2,8 @@
 const express = require("express");
 // Database connection
 const db = require("./config/mongoose");
+const hostname = "0.0.0.0";
+
 // Default port to listen on
 const port = 8000;
 
@@ -26,5 +28,5 @@ app.listen(port, (err) => {
     console.log("Error in listening to requests");
     return;
   }
-  console.log(`Server running at http://localhost:${port}`);
+  console.log(`Server running at http://${hostname}:${port}`);
 });
