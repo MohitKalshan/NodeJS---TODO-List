@@ -129,7 +129,11 @@ input[type="checkbox"] {
 }
 .todo-row {
   border-radius: 10px;
-  /* 0 4px 4px 0; */
+}
+.todo-row:hover {
+  transition: 1s ease-in-out;
+  transform: scale(1.01);
+  box-shadow: 1px 0px 6px rgb(201, 200, 200);
 }
 .todo-row:nth-child(3n + 1) {
   background: rgb(255,87,19);
@@ -176,4 +180,5 @@ input[type="checkbox"] {
 button:hover {
   transition: 1s ease-in-out;
   transform: scale(1.2);
+  box-shadow: 1px 0px 6px grey;
 }
