@@ -1,41 +1,178 @@
 * {
   margin: 0;
+  --descriptionColor: rgb(22, 24, 38);
+  /* linear-gradient(45deg, rgba(42, 172, 227, 0.535), rgba(69, 151, 244, 0.805)); */
+  --taskListColor: rgb(22, 24, 38);
+  /* linear-gradient(45deg, rgb(0, 153, 255)); */
+  --backgroundColor: linear-gradient(
+    90deg,
+    rgba(48, 16, 255, 1) 0%,
+    rgba(100, 115, 255, 1) 100%
+  );
+  /* rgb(45,20,254); */
+  /* linear-gradient(90deg, rgb(45,20,254), rgb(90,102,255)); */
 }
 body {
-  background: #b93939;
+  height: 100vh;
+  background: var(--backgroundColor);
   text-align: center;
-  border: 2px solid white;
+  color: whitesmoke;
+  /* border: 2px solid rgb(10, 10, 10); */
 }
-.upperSection {
+main {
   display: flex;
   flex-direction: column;
-  margin: auto;
-  width: 50%;
+  margin: 20px auto;
+  width: 80%;
   height: 50vh;
-  background: #1623b4;
-  border: 2px solid white;
+  background: var(--descriptionColor);
+  border-radius: 20px;
+  /* border: 2px solid white; */
+  box-shadow: 0px 2px 8px white;
+}
+h1 {
+  text-shadow: 2px 0 4px rgb(0, 0, 0);
+}
+main > h6 {
+  font-size: 1.5rem;
+  color: aliceblue;
+  text-shadow: 4px 2px 6px gray;
+}
+textarea {
+  padding: 20px;
+  background: #ffffff;
+  margin: 8px auto;
+  border-width: 4px;
+  border-style: solid;
+  border-image: linear-gradient(to right, darkblue, darkorchid) 1;
+}
+.category-date {
+  display: flex;
+  justify-content: center;
+  /* border: 2px solid white; */
+  width: 100%;
+  margin: 15px auto;
+  color: whitesmoke;
+}
+.category-date > div {
+  padding: 0 15px;
+}
+.dropdownMenu {
+  display: flex;
+  justify-self: space-around;
+  /* align-items: space-around; */
+}
+#drop-down {
+  color: whitesmoke;
+  cursor: pointer;
+  background: linear-gradient(
+    90deg,
+    rgba(93, 12, 255, 0.799) 0%,
+    rgba(154, 0, 250, 0.778) 100%
+  );
+  font-size: larger;
+}
+#drop-down option {
+  background: rgba(155, 0, 250, 1)
+}
+input[type="date"] {
+  font-size: larger;
+  color: whitesmoke;
+  cursor: pointer;
+  background: linear-gradient(
+    90deg,
+    rgba(93, 12, 255, 0.799) 0%,
+    rgba(154, 0, 250, 0.778) 100%
+  );
+ 
 }
 .showTaskList {
-  background: #dcc2c2;
+  background: var(--taskListColor);
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-top: 40px;
+  width: 100%;
+  box-shadow: 2px 2px 6px white;
+  /* border: 2px solid white; */
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.checkboxTask {
+  padding: 0 15px;
+}
+input[type="checkbox"] {
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+.showTaskList > div {
+  margin: 4px;
+  border: 0px 3px solid rgb(32, 27, 27);
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+/* category badge */
+.displayCategory {
+  color: whitesmoke;
+  background: rgb(19, 18, 18);
+  /* border: 2px solid rgb(2, 2, 2); */
+  padding: 4px;
+  position: absolute;
+  right: 15%;
+}
+.todo-row {
+  border-radius: 0 4px 4px 0;
+}
+.todo-row:nth-child(3n + 1) {
+  background: rgb(255,87,19);
+}
+
+.todo-row:nth-child(3n + 2) {
+  background: 
+  linear-gradient(
+    90deg,
+    rgba(255, 12, 241, 1) 0%,
+    rgba(250, 0, 135, 1) 100%
+  );
+}
+
+.todo-row:nth-child(3n + 3) {
+  background: linear-gradient(
+    90deg,
+    rgba(20, 159, 255, 1) 0%,
+    rgba(17, 122, 255, 1) 100%
+  );
+}
+/* Button styling */
+.btnSection {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  margin: auto;
-  width: 50%;
-  border: 2px solid white;
+  margin-top: 15px;
+  /* border: 2px solid white; */
 }
-.showTaskList > div{
-    margin: 4px;
+.btnSection button {
+  font-size: larger;
+  margin: 0 12px;
+  padding: 12px;
+  color: rgb(255, 255, 255);
+  background: linear-gradient(
+    90deg,
+    rgba(93, 12, 255, 1) 0%,
+    rgba(155, 0, 250, 1) 100%
+  );
+  border-radius: 20px;
+  cursor: pointer;
 }
-.btnSection{
-    background: #4eb15a;
-    display: flex;
-    flex-direction: row;
-    padding: 4px;
-    align-items: center;
-    justify-content: center;
-    margin: auto;
-    border: 2px solid white;
+button:hover {
+  transition: 1s ease-in-out;
+  transform: scale(1.2);
 }
-

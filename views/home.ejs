@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" href="../css/home.css">
 
     <title>
@@ -14,60 +15,78 @@
 </head>
 
 <body>
-    <div class="heading">
+    <header>
         <h1>
             <%= title %>
         </h1>
-    </div>
-    <div class="upperSection">
+    </header>
+    <main>
         <form action="/add-task" method="post">
-            <h6>Description</h6>
-            <textarea name="desc" cols="50" rows="5" placeholder="Write description here" required></textarea>
-            <div class="category">
-                <select name="category" id="drop-down">
-                    <option value="Personal">Personal</option>
-                    <option value="Professional">Professional</option>
-                    <option value="Academics">Academics</option>
-                    <option value="Social">Social</option>
-                    <option value="Other">Other</option>
-                </select>
-                <input type="date" name="date" id="">
-            </div>
-            <div class="btnSection">
+            <h2 style="color: aliceblue;">Description</h2>
+            <textarea name="desc" cols="50" rows="5" placeholder="What do you need to do??" required></textarea>
 
+            <!-- category section -->
+            <div class="category-date">
+                <div class="dropdownMenu">
+                    <select name="category" id="drop-down" required>
+                        <option value="">Choose Category</option>
+                        <option value="Personal">Personal</option>
+                        <option value="Professional">Professional</option>
+                        <option value="Academics">Academics</option>
+                        <option value="Social">Social</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <div class="dateSelect">
+                    <label for="date">Due Date : </label>
+                    <input type="date" name="date" required>
+                </div>
+            </div>
+            <!-- button section start-->
+            <div class="btnSection">
                 <!-- Add Button -->
                 <button type="submit" class="btn">Add Task</button>
         </form>
         <!-- form for deleting the task -->
         <form action="/delete-task" method="get">
             <button type="submit" class="btn">Delete Tasks</button>
-    </div>
-    </div>
-    <div class="lowerSection">
-        <div class="showTaskList">
-            <% if(todo_list.length!=0){ %>
-                <% for(let i of todo_list) { %>
-                    <div>
-                        <input type="checkbox" name="id" value="<%= i._id %>">
-                    </div>
-                    <div>
-                        <h5>
-                            <%= i.desc %>
-                        </h5>
-                        <p>
-                            <%= i.category %>
-                        </p>
-                        <p>
-                            <%= i.date %>
-                        </p>
-                    </div>
-                    <% } %>
+            </div>
+            <!-- button section end -->
+            <!-- task list  -->
+            <div class="showTaskList">
+                <% if(todo_list.length!=0){ %>
+                    <% for(let i of todo_list) { %>
+
+                        <div class="todo-row">
+                            <div class="checkboxTask">
+                                <input type="checkbox" name="id" value="<%= i._id %>">
+                            </div>
+                            <div>
+                                <h3>
+                                    <%= i.desc %>
+                                </h3>
+                                <h6>
+                                    <i class="bi bi-calendar2-minus"></i> Due Date : <%= i.date %>
+                                </h6>
+                            </div>
+                            <div class="displayCategory">
+                                <p>
+                                     <%= i.category %>
+                                </p>
+                            </div>
+                        </div>
+
                         <% } %>
-                            <% if( todo_list.length==0 ) {%>
-                                <h1 style="text-align: center;">No task Added Yet!</h1>
-                                <% } %>
-                                    </form>
-        </div>
+                            <% } %>
+                                <% if( todo_list.length==0 ) {%>
+                                    <h2 style="text-align: center;">No task Added!</h2>
+                                    <% } %>
+
+
+
+        </form>
+    </main>
+
 </body>
 
 </html>

@@ -12,7 +12,7 @@ module.exports.home = function (req, res) {
       return;
     }
     return res.render('home',{
-        title : "TO DO List!", 
+        title : "TODO App", 
         todo_list : task
      });
   });
@@ -33,22 +33,15 @@ module.exports.add = function (req, res) {
 // Controller for deleting a task
 module.exports.delete = function (req, res) {
   // get id of selected task
-  // console.log(req.body);
-
-  var id = req.query.id;
+  var arr = req.query.id;
   // console.log(id);
-  // let arr = req.query.id;
-  // console.log(arr);
-
-
-  // let selectedTask = Object.keys(id).length;
    // to check the number of tasks to be deleted
-   for (let i = 0; i < id.length; i++) {
-    console.log(id[i]);
+   for (let i = 0; i < arr.length; i++) {
+    console.log(arr[i]);
 
        //Deleting the task from the database by using their individual ids
         // _id: id[i] for searching the task by id array
-       TaskList.findByIdAndDelete({_id:id[i]}, 
+       TaskList.findByIdAndDelete({_id:arr[i]}, 
        function(err) {
            if (err) {
                console.log("Error in deleting the task from DB");
